@@ -16,25 +16,21 @@ pageClass: device-page
 |     |     |
 |-----|-----|
 | Model | tubeszb.router  |
-| Vendor  | TubesZB  |
-| Description | [CC2652 Router](https://github.com/tube0013/tube_gateways/tree/main/tube_cc_router) |
-| Exposes | linkquality |
-| Picture | ![TubesZB tubeszb.router](https://www.zigbee2mqtt.io/images/devices/tubeszb.router.jpg) |
+| Vendor  | [TubesZB](/supported-devices/#v=TubesZB)  |
+| Description | CC2652 Router |
+| Exposes |  |
+| Picture | ![TubesZB tubeszb.router](https://www.zigbee2mqtt.io/images/devices/tubeszb.router.png) |
 
 
 <!-- Notes BEGIN: You can edit here. Add "## Notes" headline if not already present. -->
-
-
+## Notes
+[CC2652 Router](https://github.com/tube0013/tube_gateways/tree/main/tube_cc_router)
 <!-- Notes END: Do not edit below this line -->
+
 
 
 
 ## Exposes
 
-### Linkquality (numeric)
-Link quality (signal strength).
-Value can be found in the published state on the `linkquality` property.
-It's not possible to read (`/get`) or write (`/set`) this value.
-The minimal value is `0` and the maximum value is `255`.
-The unit of this value is `lqi`.
+
 
