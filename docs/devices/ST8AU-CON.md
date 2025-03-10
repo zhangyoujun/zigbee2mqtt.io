@@ -16,10 +16,10 @@ pageClass: device-page
 |     |     |
 |-----|-----|
 | Model | ST8AU-CON  |
-| Vendor  | OSRAM  |
+| Vendor  | [OSRAM](/supported-devices/#v=OSRAM)  |
 | Description | OSRAM SubstiTUBE T8 Advanced UO Connected |
-| Exposes | light (state, brightness), effect, linkquality |
-| Picture | ![OSRAM ST8AU-CON](https://www.zigbee2mqtt.io/images/devices/ST8AU-CON.jpg) |
+| Exposes | light (state, brightness), effect |
+| Picture | ![OSRAM ST8AU-CON](https://www.zigbee2mqtt.io/images/devices/ST8AU-CON.png) |
 
 
 <!-- Notes BEGIN: You can edit here. Add "## Notes" headline if not already present. -->
@@ -52,6 +52,7 @@ is manually switched off then on. Lights will remember their respective attribut
 **INFO**: Value is true, false (boolean)
 <!-- Notes END: Do not edit below this line -->
 
+
 ## OTA updates
 This device supports OTA updates, for more information see [OTA updates](../guide/usage/ota_updates.md).
 
@@ -60,6 +61,8 @@ This device supports OTA updates, for more information see [OTA updates](../guid
 *[How to use device type specific configuration](../guide/configuration/devices-groups.md#specific-device-options)*
 
 * `transition`: Controls the transition time (in seconds) of on/off, brightness, color temperature (if applicable) and color (if applicable) changes. Defaults to `0` (no transition). The value must be a number with a minimum value of `0`
+
+* `state_action`: State actions will also be published as 'action' when true (default false). The value must be `true` or `false`
 
 
 ## Exposes
@@ -96,11 +99,4 @@ Value will **not** be published in the state.
 It's not possible to read (`/get`) this value.
 To write (`/set`) a value publish a message to topic `zigbee2mqtt/FRIENDLY_NAME/set` with payload `{"effect": NEW_VALUE}`.
 The possible values are: `blink`, `breathe`, `okay`, `channel_change`, `finish_effect`, `stop_effect`.
-
-### Linkquality (numeric)
-Link quality (signal strength).
-Value can be found in the published state on the `linkquality` property.
-It's not possible to read (`/get`) or write (`/set`) this value.
-The minimal value is `0` and the maximum value is `255`.
-The unit of this value is `lqi`.
 

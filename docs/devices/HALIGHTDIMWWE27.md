@@ -16,10 +16,10 @@ pageClass: device-page
 |     |     |
 |-----|-----|
 | Model | HALIGHTDIMWWE27  |
-| Vendor  | Hive  |
+| Vendor  | [Hive](/supported-devices/#v=Hive)  |
 | Description | Active smart bulb white LED (E27) |
-| Exposes | light (state, brightness), effect, linkquality |
-| Picture | ![Hive HALIGHTDIMWWE27](https://www.zigbee2mqtt.io/images/devices/HALIGHTDIMWWE27.jpg) |
+| Exposes | light (state, brightness), effect |
+| Picture | ![Hive HALIGHTDIMWWE27](https://www.zigbee2mqtt.io/images/devices/HALIGHTDIMWWE27.png) |
 
 
 <!-- Notes BEGIN: You can edit here. Add "## Notes" headline if not already present. -->
@@ -27,15 +27,18 @@ pageClass: device-page
 
 
 ### Pairing
-Follow instructions from
-[How do I reset my Hive Active Light?](https://www.hivehome.com/ca/support/Help_installing_Hive/HIH_Hive_Active_Light/How-do-I-reset-my-Hive-Active-Light). After resetting the bulb will automatically connect.
+Follow instructions from step 1
+[Why is my Hive Light showing as Offline in my app or online dashboard?](https://www.hivehome.com/ie/support/Help_Using_Hive/HUH_Hive_Active_Light/Why-is-my-Hive-Active-Light-showing-as-Offline-in-my-app-or-online-dashboard). After resetting the bulb will automatically connect.
 <!-- Notes END: Do not edit below this line -->
+
 
 
 ## Options
 *[How to use device type specific configuration](../guide/configuration/devices-groups.md#specific-device-options)*
 
 * `transition`: Controls the transition time (in seconds) of on/off, brightness, color temperature (if applicable) and color (if applicable) changes. Defaults to `0` (no transition). The value must be a number with a minimum value of `0`
+
+* `state_action`: State actions will also be published as 'action' when true (default false). The value must be `true` or `false`
 
 
 ## Exposes
@@ -72,11 +75,4 @@ Value will **not** be published in the state.
 It's not possible to read (`/get`) this value.
 To write (`/set`) a value publish a message to topic `zigbee2mqtt/FRIENDLY_NAME/set` with payload `{"effect": NEW_VALUE}`.
 The possible values are: `blink`, `breathe`, `okay`, `channel_change`, `finish_effect`, `stop_effect`.
-
-### Linkquality (numeric)
-Link quality (signal strength).
-Value can be found in the published state on the `linkquality` property.
-It's not possible to read (`/get`) or write (`/set`) this value.
-The minimal value is `0` and the maximum value is `255`.
-The unit of this value is `lqi`.
 
